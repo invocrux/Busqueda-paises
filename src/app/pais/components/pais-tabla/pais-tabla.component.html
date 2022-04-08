@@ -1,0 +1,19 @@
+<table class="table table-hover" *ngIf="!error">
+  <thead>
+      <tr>
+          <th> # </th>
+          <th> Bandera </th>
+          <th> Nombre </th>
+          <th> Poblacion </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let datos of paisTabla; let i = index">
+          <td>{{i}}</td>
+          <td> <img class="small-flag" [src]="datos.flags.svg" > </td>
+          <td>{{datos.capital}}, {{datos.name.common}}</td>
+          <td>{{datos.population | number}}</td>
+          <td><a [routerLink]="['/pais', datos.cca2]">ver...</a></td>
+      </tr>
+  </tbody>
+</table>
